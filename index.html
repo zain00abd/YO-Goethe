@@ -19,7 +19,7 @@
     <form class="product-form">
       <img src="oy14.png" style=" position:fixed; width: 90%; left: 4%; bottom: -15%; z-index: -1;"  alt="yo0">
       <div style="display: flex;">
-        <h3 style="color: rgb(255, 0, 0); margin-left: 7px;">تنبيه:</h3><h4>يرجى إدخال البيانات كما هو موضح في جواز السفر لتجنب أي أخطاء</h4>
+        <h3 style="color: rgb(255, 0, 0); margin-left: 7px;">تنبيه:</h3><h4>يرجى إدخال البيانات كما هو مكتوب في جواز السفر حصرا</h4>
       </div>
       <hr style="width: 100%; height: 2px; background-color: rgb(0, 0, 0); border: none;">
           <label for="name">الاسم</label>
@@ -31,7 +31,7 @@
           <label for="date_from">تاريخ الولادة </label>
           <div id="date_from">
             <select id="day" class="form-control" tabindex="3" data-dkcacheid="1">
-              <option value="">اليوم</option>
+              <option value="" disabled selected>اليوم</option>
               
                   <option value="1">1</option>
               
@@ -96,7 +96,7 @@
                   <option value="31">31</option>
             </select>
             <select id="mounth" class="form-control" tabindex="3" data-dkcacheid="1">
-              <option value="">الشهر</option>
+              <option value="" disabled selected>الشهر</option>
               
                   <option value="1">1</option>
               
@@ -123,7 +123,7 @@
                   <option value="12">12</option>
             </select>
             <select id="year" class="form-control" tabindex="3" data-dkcacheid="1">
-              <option value="">العام</option>
+              <option value="" disabled selected>العام</option>
               
                   <option value="1">1970</option>
               
@@ -235,7 +235,7 @@
             <br>
           <label for="date_from">البلد</label>
             <select name="country_ID" id="country" class="form-control" tabindex="3" data-dkcacheid="1">
-              <option value="">البلد</option>
+              <option value="" disabled selected>البلد</option>
               
                   <option value="af">Afghanistan</option>
               
@@ -650,7 +650,7 @@
           <br>
           <label for="image">مستوى الامتحان</label>
           <select id="mounth" class="form-control" tabindex="3" data-dkcacheid="1">
-            <option value="">المستوى</option>
+            <option value="" disabled selected>المستوى</option>
             
                 <option value="1">A1</option>
             
@@ -672,7 +672,7 @@
           </div>
           <div id="date_from">
             <select id="day" class="form-control" tabindex="3" data-dkcacheid="1">
-              <option value="">اليوم</option>
+              <option value="" disabled selected>اليوم</option>
               
                   <option value="1">1</option>
               
@@ -737,7 +737,7 @@
                   <option value="31">31</option>
             </select>
             <select id="mounth" class="form-control" tabindex="3" data-dkcacheid="1">
-              <option value="">الشهر</option>
+              <option value="" disabled selected>الشهر</option>
               
                   <option value="1">1</option>
               
@@ -768,21 +768,23 @@
             </select>
           </div>
           <br>
-          <div style="display: flex; flex-direction: column; ">
+          <div id="AMPA" style="display: flex; flex-direction: column; ">
             <label for="image">تصنيف الموعد</label>
-            <select id="AMPA" class="form-control" tabindex="3" data-dkcacheid="1">
-            <option value="">صباحي/مسائي</option>
+            <select class="form-control" tabindex="3" data-dkcacheid="1">
+            <option value="" disabled selected>صباحي/مسائي</option>
             <option value="2023">صباحي</option>
             <option value="2023">مسائي</option>
             </select>
           </div>
           <br>
-          <label for="image">هل تقدمت سابقا لأي امتحان مهما كان المستوى سابقا في معهد غوتة في اي دولة سابقا</label>
-          <select id="AMPA" class="form-control" tabindex="3" data-dkcacheid="1">
-          <option value="">اجب ب نمم او لا</option>
-          <option value="2023">نعم</option>
-          <option value="2023">لا</option>
-          </select>
+          <div id="yes_no">
+            <label for="image">هل تقدمت سابقا لأي امتحان مهما كان المستوى سابقا في معهد غوتة في اي دولة سابقا</label>
+            <select id="" class="form-control" tabindex="3" data-dkcacheid="1">
+            <option value="" disabled selected>اج نمم او لا</option>
+            <option value="2023">نعم</option>
+            <option value="2023">لا</option>
+            </select>
+          </div>
           <br>
           <input type="submit" value="Submit">
       </form>
