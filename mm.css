@@ -138,10 +138,11 @@ select{
 #AMPA{
   width: 30%;
 }
-@media screen and (max-width:750px){
+@media screen and (max-width:900px){
   *{
     zoom: 90%;
     font-size: 15px;
+    background-color: #30df00;
   }
   img[alt = 'yo0']{
     top: 15%;
