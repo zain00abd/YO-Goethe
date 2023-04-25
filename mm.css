@@ -138,6 +138,37 @@ select{
 #AMPA{
   width: 30%;
 }
+@media screen and (max-width:750px){
+  *{
+    zoom: 90%;
+    font-size: 15px;
+  }
+  img[alt = 'yo0']{
+    top: 15%;
+  }
+  #date_from{
+    display: flex;
+    flex-flow: column;
+  }
+  #date_from select{
+    width: 65%;
+  }
+  input{
+    height: 32px;
+    font-size: 16px;
+  }
+  input[type="submit"]:not(:hover) {
+    transition: 0.5s;
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
 
   
 
