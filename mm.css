@@ -104,7 +104,7 @@ select{
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 4px;
   width: 100%;
   text-align: center;
@@ -167,6 +167,33 @@ select{
     cursor: pointer;
     width: 100%;
     margin-top: 20px;
+  }
+  #yes_no{
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+  }
+  #yes_no select{
+    width: 90%;
+  }
+  #AMPA select{
+    width: 200%;
+  }
+  #len_gothe a{
+    margin-right: 3%;
+    margin-top: 0px;
+    height: 20%;
+    width: 25%;
+    background:linear-gradient(#00df4e,#004422);
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: none;
+    outline: none;
+    padding-right: 5%;
+    padding-left: 5%;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
   }
 }
 
