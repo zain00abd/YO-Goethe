@@ -876,12 +876,19 @@
       })
     }
 
+    let isrelode
     level.addEventListener('click',() =>{
       for( let i = 0; i < 3 ; i++){
-        selectlevel()
+        isrelode = true
         console.log('saf')
       }
     })
+
+    setInterval(function(){
+      if(isrelode){
+        selectlevel()
+      }
+    },300)
 
     function selectlevel(){
       if(level.value == 'A1'){
