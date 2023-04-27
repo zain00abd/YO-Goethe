@@ -824,22 +824,37 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
     import { getDatabase, update, set, ref, get, onChildAdded, push, child} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
     const Config = {
-    apiKey: "AIzaSyBhPBlerMZGPPn9mfYsZYuIBH0sjAcDoBY",
-    authDomain: "oy-goethe.firebaseapp.com",
-    databaseURL: "https://oy-goethe-default-rtdb.firebaseio.com",
-    projectId: "oy-goethe",
-    storageBucket: "oy-goethe.appspot.com",
-    messagingSenderId: "1080444425010",
-    appId: "1:1080444425010:web:8a7fe567e8d82363cb7d2b"
-  };
+      apiKey: "AIzaSyBhPBlerMZGPPn9mfYsZYuIBH0sjAcDoBY",
+      authDomain: "oy-goethe.firebaseapp.com",
+      databaseURL: "https://oy-goethe-default-rtdb.firebaseio.com",
+      projectId: "oy-goethe",
+      storageBucket: "oy-goethe.appspot.com",
+      messagingSenderId: "1080444425010",
+      appId: "1:1080444425010:web:8a7fe567e8d82363cb7d2b"
+    };
     const app = initializeApp(Config);
     const db = getDatabase(app);
-
-
-
     const dbRef = ref(db, '/editor/')
 
+    let arrinpall = [firname,lastname,contrdate1,contrdate2,contrdate3,contry,phone,email,street,level,levelday,levelmounth,levelyear,yesno];
+
+
     submit.onclick = () =>{
+      for(let i = 0; i < arrinpall.length; i++){
+        if(arrinpall[i].value == ''){
+          arrinpall[i].classList.add('inperror')
+          break;
+        }
+        else{arrinpall[i].classList.add('inptrue')}
+
+        if(i == arrinpall.length-1){
+          setdata()
+          console.log('sf')
+        }
+      }
+    }
+
+    function setdata(){
       let arrdata = []
 
       let data = {
@@ -863,24 +878,39 @@
     }
 
     level.addEventListener('click',() =>{
-      showdate.style.display = 'block'
-      if(level.value !== ''){
+        showdate.style.display = 'block'
+
         linkgo.innerHTML = `مواعيد امتحان ${level.value}>>`
         if(level.value == 'A1'){
           linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd1.cfm')
           ampa.style.display = 'flex'
-        }else{ampa.style.display = 'none'}
-        if(level.value == 'A2')
-        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd2.cfm')
-        else if(level.value == 'B1')
-        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb1.cfm')
-        else if(level.value == 'B2')
-        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb2.cfm')
-        else if(level.value == 'C1')
-        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzc1.cfm')
-        else if(level.value == 'C2')
-        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzc2.cfm')
-      }
+        }
+
+        else if(level.value == 'A2'){
+          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd2.cfm')
+          ampa.style.display = 'none'
+        }
+
+        else if(level.value == 'B1'){
+          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb1.cfm')
+          ampa.style.display = 'none'
+        }
+
+        else if(level.value == 'B2'){
+          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb2.cfm')
+          ampa.style.display = 'none'
+        }
+
+        else if(level.value == 'C1'){
+          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzc1.cfm')
+          ampa.style.display = 'none'
+        }
+
+        else if(level.value == 'C2'){
+          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzc2.cfm')
+          ampa.style.display = 'none'
+        }
+
     })
   </script>
 </body>
