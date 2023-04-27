@@ -879,41 +879,42 @@
     level.addEventListener('click',() =>{
       for( let i = 0; i < 3 ; i++){
         selectlevel()
+        console.log('saf')
       }
     })
 
     function selectlevel(){
-        showdate.style.display = 'block'
-        linkgo.innerHTML = `مواعيد امتحان ${level.value}>>`
-        if(level.value == 'A1'){
-          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd1.cfm')
-          ampa.style.display = 'flex'
-        }
+      if(level.value == 'A1'){
+        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd1.cfm')
+        ampa.style.display = 'flex'
+      }
 
-        else if(level.value == 'A2'){
-          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd2.cfm')
+      else if(level.value == 'A2'){
+        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd2.cfm')
+        ampa.style.display = 'none'
+      }
+
+      else if(level.value == 'B1'){
+        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb1.cfm')
+        ampa.style.display = 'none'
+      }
+      
+      else if(level.value == 'B2'){
+        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb2.cfm')
+        ampa.style.display = 'none'
+      }
+      
+      else if(level.value == 'C1'){
+        linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzc1.cfm')
           ampa.style.display = 'none'
         }
-
-        else if(level.value == 'B1'){
-          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb1.cfm')
-          ampa.style.display = 'none'
-        }
-
-        else if(level.value == 'B2'){
-          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzb2.cfm')
-          ampa.style.display = 'none'
-        }
-
-        else if(level.value == 'C1'){
-          linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzc1.cfm')
-          ampa.style.display = 'none'
-        }
-
+        
         else if(level.value == 'C2'){
           linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzc2.cfm')
           ampa.style.display = 'none'
         }
+        linkgo.innerHTML = `مواعيد امتحان ${level.value}>>`
+        showdate.style.display = 'block'
       }
   </script>
 </body>
