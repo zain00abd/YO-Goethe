@@ -863,8 +863,8 @@
     }
 
     level.addEventListener('click',() =>{
+      showdate.style.display = 'block'
       if(level.value !== ''){
-        showdate.style.display = 'block'
         linkgo.innerHTML = `مواعيد امتحان ${level.value}>>`
         if(level.value == 'A1'){
           linkgo.setAttribute('href','https://www.goethe.de/ins/lb/ar/spr/prf/gzsd1.cfm')
