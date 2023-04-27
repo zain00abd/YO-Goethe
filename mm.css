@@ -9,7 +9,7 @@ body {
   direction: rtl;
 }
 #head{
-  margin: 20px;
+  margin: 1.5%;
   display: flex;
   flex-direction: row-reverse;
   justify-content: end;
@@ -32,13 +32,12 @@ img[alt = '1']{
   top: 540px;
 }
 #head img{
-  background-color: #f1ffe8;
+  background:none;
   width: 80px;
 }
 #head h1{
   align-self:center;
   margin-left: 10px;
-  
 }
 .product-container {
   padding-top: 80px;
@@ -73,6 +72,7 @@ input{
   font-size: 17px;
   font-weight: 550;
   border-radius: 15px;
+  direction: ltr;
 }
 
 
