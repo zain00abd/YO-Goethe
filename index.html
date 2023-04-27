@@ -793,11 +793,8 @@
         </select>
         </div>
         <br>
+        <h4 id="mas_error" style="text-align: center; color: rgb(255, 0, 0); background-color: rgba(165, 42, 42, 0.325); height: 25px; display: none;">يرجى تعبئة الفراغات بالكامل</h4>
         <input type="submit" id="submit" value="Submit">
-        <!-- /////////////// -->
-        <div id="test"></div>
-        <!-- /////////////// -->
-
     </form>
   </div>
   <script type="module">
@@ -840,18 +837,20 @@
 
 
     submit.onclick = () =>{
+      let isfull;
       for(let i = 0; i < arrinpall.length; i++){
         if(arrinpall[i].value == ''){
           arrinpall[i].classList.add('inperror')
-          break;
+          isfull = false
+          document.querySelector('#mas_error').style.display = 'block'
         }
         else{arrinpall[i].classList.add('inptrue')}
-
-        if(i == arrinpall.length-1){
-          setdata()
-          console.log('sf')
-        }
       }
+      if(isfull !== false){
+        setdata()
+        console.log('sf')
+      }
+
     }
 
     function setdata(){
