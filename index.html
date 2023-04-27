@@ -641,7 +641,7 @@
             
         </select>
         <br>
-        <label for="image">رقم الهاتف</label>
+        <label for="image">رقم الهاتف (يرجى ارفاق رمز الدولة مع الرقم)</label>
         <input type="text" id="Phone">
         <br>
         <label for="image">الايميل</label>
@@ -874,6 +874,7 @@
       push(dbRef,arrdata[0]).then((res)=>{
       get(child(dbRef,res.key)).then((resData)=>{console.log(resData.val())})
       })
+      location.replace('https://zain00abd.github.io/OY-Goethe-Truesubmit/')
     }
 
     let isrelode
