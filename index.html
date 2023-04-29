@@ -779,8 +779,8 @@
         <label for="image">تصنيف الموعد</label>
         <select id="id_ampa" class="form-control" tabindex="3" data-dkcacheid="1">
           <option value="" disabled selected>صباحي/مسائي</option>
-          <option value="صباحي">صباحي</option>
-          <option value="مسائي">مسائي</option>
+          <option value="AM">صباحي</option>
+          <option value="PM">مسائي</option>
         </select>
         </div>
         <br>
@@ -788,8 +788,8 @@
         <label for="image">هل تقدمت سابقا لأي امتحان مهما كان المستوى سابقا في معهد غوتة في اي دولة سابقا</label>
         <select id="yesno" class="form-control" tabindex="3" data-dkcacheid="1">
         <option value="" disabled selected>اجب نمم او لا</option>
-        <option value="نعم">نعم</option>
-        <option value="لا">لا</option>
+        <option value="Yes">نعم</option>
+        <option value="No">لا</option>
         </select>
         </div>
         <br>
@@ -819,7 +819,7 @@
     let yesno = document.getElementById('yesno')
 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
-    import { getDatabase, update, set, ref, get, onChildAdded, push, child} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
+    import { getDatabase, update, set, ref, onChildAdded, push, child} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
     const Config = {
       apiKey: "AIzaSyBhPBlerMZGPPn9mfYsZYuIBH0sjAcDoBY",
       authDomain: "oy-goethe.firebaseapp.com",
@@ -831,7 +831,7 @@
     };
     const app = initializeApp(Config);
     const db = getDatabase(app);
-    const dbRef = ref(db, '/editor/')
+    const dbRef = ref(db, '/user/')
 
     let arrinpall = [firname,lastname,contrdate1,contrdate2,contrdate3,contry,phone,email,street,level,levelday,levelmounth,levelyear,yesno];
 
@@ -848,7 +848,6 @@
       }
       if(isfull !== false){
         setdata()
-        console.log('sf')
       }
 
     }
@@ -871,18 +870,13 @@
       }
       arrdata.push(data)
       
-      push(dbRef,arrdata[0]).then((res)=>{
-      get(child(dbRef,res.key)).then((resData)=>{console.log(resData.val())})
-      })
+      push(dbRef,arrdata[0]).then((res)=>{})
       location.replace('https://zain00abd.github.io/OY-Goethe-Truesubmit/')
     }
-
+    
     let isrelode
     level.addEventListener('click',() =>{
-      for( let i = 0; i < 3 ; i++){
         isrelode = true
-        console.log('saf')
-      }
     })
 
     setInterval(function(){
