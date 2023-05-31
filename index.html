@@ -827,6 +827,9 @@
     onChildChanged(ref(db,'bool'),(resed)=>{
       isopen = resed.val()
     })
+    onChildAdded(ref(db,'bool'),(resed)=>{
+      isopen = resed.val()
+    })
 
     let firname = document.getElementById('first')
     let lastname = document.getElementById('last')
@@ -847,6 +850,8 @@
     let levelyear = document.getElementById('level_year')
     let idampa = document.getElementById('id_ampa')
     let yesno = document.getElementById('yesno')
+    let date1 = new Date();
+    let dateevry;
     
     let arrinpall = [firname,lastname,contrdate1,contrdate2,contrdate3,contry,phone,email,street,level,levelday,levelmounth,levelyear,yesno];
     
@@ -871,9 +876,10 @@
       location.replace('https://zain00abd.github.io/Accesserror/')
     }
     else{
-
+      dateevry = date1.getDate() + '/' + (date1.getMonth() +1) + '/' + date1.getFullYear();
       let arrdata = []
       let data = {
+        dateN:dateevry,
         Firstname:firname.value,
         Lastname:lastname.value,
         Email:email.value,
@@ -889,10 +895,12 @@
       arrdata.push(data)
         
       push(dbRef,arrdata[0]).then((res)=>{
-        update(ref(db,'resmax/'),{
-          'num':maxnum - 1,
-        })
-        location.assign('https://zain00abd.github.io/OY-Goethe-Truesubmit/')
+        if(maxnum !== undefined){
+          update(ref(db,'resmax/'),{
+            'num':maxnum - 1,
+          })
+        }
+        location.replace('https://zain00abd.github.io/OY-Goethe-Truesubmit/')
       })  
     }
   }
